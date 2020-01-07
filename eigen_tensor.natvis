@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<AutoVisualizer xmlns="http://schemas.microsoft.com/vstudio/debugger/natvis/2010">
+
+  <Type Name="Eigen::Tensor&lt;*,*,*,*&gt;">
+    <DisplayString Condition="$T2 == 0">[]</DisplayString>
+    <DisplayString Condition="$T2 == 1">[{m_storage.m_dimensions._Elems[0]}]</DisplayString>
+    <DisplayString Condition="$T2 == 2">[{m_storage.m_dimensions._Elems[0]},{m_storage.m_dimensions._Elems[1]}]</DisplayString>
+    <DisplayString Condition="$T2 == 3">[{m_storage.m_dimensions._Elems[0]},{m_storage.m_dimensions._Elems[1]},{m_storage.m_dimensions._Elems[2]}]</DisplayString>
+    <DisplayString Condition="$T2 == 4">[{m_storage.m_dimensions._Elems[0]},{m_storage.m_dimensions._Elems[1]},{m_storage.m_dimensions._Elems[2]},{m_storage.m_dimensions._Elems[3]}]</DisplayString>
+    <DisplayString Condition="$T2 == 5">[{m_storage.m_dimensions._Elems[0]},{m_storage.m_dimensions._Elems[1]},{m_storage.m_dimensions._Elems[2]},{m_storage.m_dimensions._Elems[3]},{m_storage.m_dimensions._Elems[4]}]</DisplayString>
+    <DisplayString Condition="$T2 == 6">[{m_storage.m_dimensions._Elems[0]},{m_storage.m_dimensions._Elems[1]},{m_storage.m_dimensions._Elems[2]},{m_storage.m_dimensions._Elems[3]},{m_storage.m_dimensions._Elems[4]},{m_storage.m_dimensions._Elems[5]}]</DisplayString>
+    <Expand>
+      <!-- column major layout -->
+      <ArrayItems Condition ="$T3%2==0">
+        <Direction>Backward</Direction>
+        <Rank>$T2</Rank>
+        <Size>m_storage.m_dimensions._Elems[$i]</Size>
+        <ValuePointer>m_storage.m_data</ValuePointer>
+      </ArrayItems>
+      <!-- row major layout -->
+      <ArrayItems Condition ="$T3%2==1">
+        <Rank>$T2</Rank>
+        <Size>m_storage.m_dimensions._Elems[$i]</Size>
+        <ValuePointer>m_storage.m_data</ValuePointer>
+      </ArrayItems>
+    </Expand>
+  </Type>
+</AutoVisualizer>
