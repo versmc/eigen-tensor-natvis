@@ -9,7 +9,8 @@
     <DisplayString Condition="$T2 == 4">[{m_storage.m_dimensions._Elems[0]},{m_storage.m_dimensions._Elems[1]},{m_storage.m_dimensions._Elems[2]},{m_storage.m_dimensions._Elems[3]}]</DisplayString>
     <DisplayString Condition="$T2 == 5">[{m_storage.m_dimensions._Elems[0]},{m_storage.m_dimensions._Elems[1]},{m_storage.m_dimensions._Elems[2]},{m_storage.m_dimensions._Elems[3]},{m_storage.m_dimensions._Elems[4]}]</DisplayString>
     <DisplayString Condition="$T2 == 6">[{m_storage.m_dimensions._Elems[0]},{m_storage.m_dimensions._Elems[1]},{m_storage.m_dimensions._Elems[2]},{m_storage.m_dimensions._Elems[3]},{m_storage.m_dimensions._Elems[4]},{m_storage.m_dimensions._Elems[5]}]</DisplayString>
-    <Expand>
+    <DisplayString Condition="$T2 > 6">[{m_storage.m_dimensions._Elems[0]},{m_storage.m_dimensions._Elems[1]},{m_storage.m_dimensions._Elems[2]},{m_storage.m_dimensions._Elems[3]},{m_storage.m_dimensions._Elems[4]},{m_storage.m_dimensions._Elems[5]},...]</DisplayString>
+      <Expand>
       <!-- column major layout -->
       <ArrayItems Condition ="$T3%2==0">
         <Direction>Backward</Direction>
